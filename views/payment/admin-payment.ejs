@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Confirm Payment</title>
+  </head>
+  <body>
+    <h2>Admin Confirm Payment</h2>
+    <p>------------------------------</p>
+    <h4>Pending Payment</h4>
+    <% paymentsUnconfirmed.forEach((pending) => {%>
+    <div>
+      <p>------------------------------</p>
+
+      <b
+        >id :
+        <a href="/admin-payment/<%= pending.id %>"><%= pending.id %></a></b
+      >
+      <p>Total: <%= pending.total %></p>
+      <p>status : <%= pending.status %></p>
+    </div>
+    <%})%>
+    <p>------------------------------</p>
+
+    <h4>Confirmed Payment</h4>
+    <% paymentsConfirmed.forEach((confirm) => {%>
+    <div>
+      <p>------------------------------</p>
+
+      <b>id : <%= confirm.id %></b>
+      <p>Total: <%= confirm.total %></p>
+      <p>status : <%= confirm.status %></p>
+    </div>
+    <%})%>
+    <p>------------------------------</p>
+  </body>
+</html>

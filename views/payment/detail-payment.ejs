@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail Payment</title>
+  </head>
+  <body>
+    <h2>Detail Payment : <%= detail.id %></h2>
+    <div>
+      <p>------------------------------</p>
+      <b>Id : <%= detail.id %></b>
+      <p>Total : <%= detail.total %></p>
+      <p>status : <%= detail.status %></p>
+    </div>
+    <form
+      id="update"
+      action="/admin-payment/<%= detail.id %>?_method=PUT"
+      method="POST"
+    >
+      <input type="submit" value="Confirm" />
+    </form>
+  </body>
+</html>
